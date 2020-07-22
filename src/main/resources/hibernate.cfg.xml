@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings Pare sa fie o problema la baza de date acuma, deschide mysql am deschis, poti sa o vezi?-->
+        <!-- nu le am aici, sa nu pui space intre pachete la argumente la configurari, am vb cu georgi si am facut ce mi-a zis, dar atunci imi da alte erori.-->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/tennis</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">alina</property> <!-- esti sigura ca asta ii parola? da, ca mi-o cere cand incerc sa deschid mysql si doar cu asta ma lasa -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping class="model.TennisGame"/>
+        <mapping class="model.TennisMatch"/>
+        <mapping class="model.TennisSet"/>
+        <mapping class="model.User"/>
+        <mapping class="model.Admin"/>
+
+    </session-factory>
+</hibernate-configuration>
